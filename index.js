@@ -6,9 +6,11 @@ dotenv.config();
 
 const app = express();
 
-app.get("/", (req, res) => {
+// use
+app.use(express.json());
 
-});
+// routes
+
 
 function start() {
   mongoose
@@ -18,7 +20,7 @@ function start() {
     .then(() => console.log("Connected to MongoDB"))
     .catch((err) => console.log(`Error connecting to MongoDB: ${err}`));
   app.listen(4444, () => {
-    console.log("Server started on port 3000");
+    console.log("Server started on port 4444");
   });
 }
 
